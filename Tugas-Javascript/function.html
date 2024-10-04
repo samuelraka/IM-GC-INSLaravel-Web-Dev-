@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Function</title>
+</head>
+<body>
+    <h1>Berlatih Fungsi</h1>
+    <h3>Contoh Soal</h3>
+    <div id="contohJawaban">
+    </div>
+    <h3>Soal No.1</h3>
+    <div id="jawaban1">
+    </div>
+    <h3>Soal No.2</h3>
+    <div id="jawaban2">
+    </div>
+    <h3>Soal No.3</h3>
+    <div id="jawaban3">
+    </div>
+    <script>
+        // CONTOH
+        // Kamu diminta untuk membuat fungsi bernama tampilkan() untuk menampilkan "Aku Tampil" pada halaman html. // Jawaban CONTOH
+        function tampilkan() {
+            document.getElementById("contohJawaban").innerHTML = "Aku Tampil" 
+        }
+        //Jalankan function
+        tampilkan();
+
+        //soal no 1 fungsi teriak
+        function teriak(){
+            document.getElementById("jawaban1").innerHTML = "Halo Function!";
+        }
+        //Jalankan Function
+        teriak();
+
+        //soal no 2 fungsi kalikan
+        function kalikan(num1,num2){
+            var hasil = num1 * num2;
+
+            document.getElementById("jawaban2").innerHTML = "Hasil Perkalian :" + hasil;
+        }
+        //Jalankan Function
+        kalikan(5,4);
+
+        //Soal no 3 fungsi buatKalimat
+
+        function buatKalimat(nama, umur, alamat, hobi) {
+            var kalimat = "Nama Saya" + ' ' + nama + ' ' + "Umur Saya" + ' ' + umur + ' ' + ' ' + "Tahun" + ' ' + "Saya Tinggal Di" + ' ' + alamat + ' ' + "Dan Hobi Saya Adalah" + ' ' + hobi;
+
+            document.getElementById("jawaban3").innerHTML = kalimat;
+        }
+        //Jalankan Functioon
+         var nama = "John Doe";
+         var umur = "30";
+         var alamat = "Jln.Malioboro, Yogyakarta";
+         var hobi = "Gaming";
+
+         buatKalimat(nama,umur,alamat,hobi);
+    </script>
+</body>
+</html>
