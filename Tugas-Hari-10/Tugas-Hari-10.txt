@@ -1,0 +1,69 @@
+1. Pembuatan database
+CREATE DATABASE myshop;
+
+2. Pembuatan Tabel
+use myshop;
+
+CREATE TABLE users(
+	id integer AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255),
+	email VARCHAR(255),
+	password VARCHAR(255)
+);
+
+CREATE TABLE categories(
+	id integer AUTO_INCREMENT PRIMARY KEY,
+	name VARCHAR(255)
+);
+
+CREATE TABLE items(
+	id INTEGER AUTO_INCREAMENT PRIMARY KEY,
+	name VARCHAR(255),
+	description VARCHAR(255),
+	price INTEGER,
+	stock INTEGER,
+	category_id INTEGER,
+	FOREIGN KEY (category_id) REFERENCES categories(id)
+);
+
+3. Pemberian Data
+//Table users
+INSERT INTO users (name, email, password) VALUES 
+('John Doe', 'john@doe.com', 'password123'),
+('Jane Doe', 'jane@doe.com', 'password456');
+
+//table categories
+INSERT INTO categories (name) VALUES 
+('gadget'),
+('cloth'),
+('men'),
+('women'),
+('branded');
+
+//Table items
+INSERT INTO items (name, description, price, stock, category_id) VALUES 
+('Sumsang b50', 'hape keren dari merek sumsang', 5000000, 100, 1), 
+('Uniklooh', 'baju keren dari brand ternama', 300000, 50, 2), 
+('Polo', 'baju golf', 350000, 50, 3), 
+('Luis Cuitton', 'baju mehong banget', 5000000,2,4), 
+('IMHO Watch', 'jam tangan anak yang jujur banget', 250000, 30, 5);
+
+4. Mendapatkan data
+a. Mengambil semua field pada table users kecuali password 
+SELECT id, name, email FROM users;
+
+b. Mengambil semua data yang memiliki kesamaan dengan kata kunci "sang"
+SELECT * FROM items
+WHERE name LIKE '%sang%';
+
+c. menampilkan items dan kategori dengan join
+SELECT items.name, items.description
+FROM items
+JOIN categories ON items.category_id = categories.id;
+
+5. Pengubahan data pada table items 
+UPDATE items
+SET price = 2500000
+WHERE name = 'Sumsang b50';
+
+
